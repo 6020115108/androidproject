@@ -1,0 +1,3 @@
+rootProject.name='LibVideoSupport'
+include ':app'
+include ':lib'

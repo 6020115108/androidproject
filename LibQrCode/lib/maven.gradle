@@ -1,0 +1,52 @@
+/**
+ * 上传：./gradlew assembleRelease artifactoryPublish
+ * 必须在引入此module的基础上运行一下代码
+ *
+ * api 'com.bighole.qrcode:lib:1.0.0'
+ */
+
+
+def packageName = 'com.bighole.qrcode'
+def artifactId = 'qrcode'  // project.getName()
+def libraryVersion = '1.0.0'
+
+apply plugin: 'maven-publish'
+apply plugin: 'com.jfrog.artifactory'
+
+publishing {
+    publications {
+        aar(MavenPublication) {
+            groupId = packageName
+            artifactId = artifactId
+            version = libraryVersion
+
+            // Tell maven to prepare the generated "* .aar" file for publishing
+            artifact("$buildDir/outputs/aar/${project.getName()}-release.aar")
+        }
+    }
+}
+
+artifactory {
+    contextUrl = 'http://115.28.137.32:8081/artifactory'
+    publish {
+        repository {
+            // The Artifactory repository key to publish to
+            repoKey = 'libs-release-local'
+
+//            def loginInfo = getArtifactoryLoginInfo() //安全性考虑，从配置文件中读取用户登录信息
+            username = 'admin'
+            password = 'password'
+        }
+
+        defaults {
+            // Tell the Artifactory Plugin which artifacts should be published to Artifactory.
+            publications('aar')
+            publishArtifacts = true
+
+            // Properties to be attached to the published artifacts.
+            properties = ['qa.level': 'basic', 'dev.team': 'core']
+            // Publish generated POM files to Artifactory (true by default)
+            publishPom = true
+        }
+    }
+}

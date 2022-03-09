@@ -1,0 +1,3 @@
+rootProject.name='LibOss'
+include ':app'
+include ':lib'

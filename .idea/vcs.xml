@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/AppSupport" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/LibAudioRecorder" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/LibCore" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/LibHttp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/LibImageBrowser" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/LibImageLoader" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/LibImagePicker" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/LibKit" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/LibLogger" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/LibPay" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/LibPermission" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/LibRecyclerView" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/LibRouter" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/LibWebView" vcs="Git" />
+  </component>
+</project>
